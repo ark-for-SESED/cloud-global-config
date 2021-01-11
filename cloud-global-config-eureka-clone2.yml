@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8002
+spring:
+  profiles:
+    active: dev
+eureka:
+  instance:
+    hostname: eureka8002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8003.com:8003/eureka/
+---
+server:
+  port: 9002
+spring:
+  profiles:
+    active: test
+eureka:
+  instance:
+    hostname: eureka9002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka9001.com:9001/eureka/,http://eureka9003.com:9003/eureka/
+---
+server:
+  port: 8002
+spring:
+  profiles:
+    active: pro
+eureka:
+  instance:
+    hostname: eureka8002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8003.com:8003/eureka/
